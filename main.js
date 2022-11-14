@@ -15,6 +15,9 @@ var app = new Vue({
 
             console.log(this.todoList)
         },
+        keyEvent(){
+            this.todoList.push({task: this.task, done: false})
+        },
         taskCompletata(element, index){
             this.todoList[index].done= true;
             console.log(this.todoList)

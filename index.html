@@ -26,7 +26,7 @@
 
         <!-- ^Area Input -->
         <div class="pt-5 d-flex flex-column  align-items-center ">
-            <input type="text" placeholder="inserisci nuova task" v-model="task">
+            <input type="text" placeholder="inserisci nuova task" v-model="task" @keyup.enter="keyEvent">
             <button @click="aggiungiTodoList" class="mt-4">Nuova Todo</button>
         </div>
 
