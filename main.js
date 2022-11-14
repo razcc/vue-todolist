@@ -4,6 +4,7 @@ var app = new Vue({
         todoList: [],
         todoDone: [],
         task: '',
+        
 
 
     },
@@ -13,5 +14,17 @@ var app = new Vue({
 
             console.log(this.todoList)
         },
+        taskCompletata(element, index){
+            this.todoList[index].done= true;
+            console.log(this.todoList)
+
+            // Rimuovo elemento
+            this.todoList.splice (index, 1)
+
+            // Aggiungo elemetnto ad array nuovo
+            this.todoDone.push(element)
+            console.log( this.todoDone)
+
+        }
     }
 })

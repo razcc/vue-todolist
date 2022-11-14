@@ -36,9 +36,9 @@
                 <!-- Lista -->
                 <li v-for="(element, index) in todoList" class="list-group-item d-flex justify-content-between">
                     <span>
-                        {{todoList[index].task}}
+                       {{index}} | {{todoList[index].task}}
                     </span>
-                    <i class="fa-solid fa-xmark text-danger"></i>
+                    <i @click="taskCompletata(element, index)" class="fa-solid fa-xmark text-danger"></i>
                 </li>
 
             </ul>
