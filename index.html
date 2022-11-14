@@ -33,11 +33,10 @@
         <!-- ^Area TodoList -->
         <div class="pt-5 w-50 mx-auto">
             <ul class="list-group list-group-flush ">
-
                 <!-- Lista -->
-                <li class="list-group-item d-flex justify-content-between">
+                <li v-for="(element, index) in todoList" class="list-group-item d-flex justify-content-between">
                     <span>
-                        An item
+                        {{todoList[index]}}
                     </span>
                     <i class="fa-solid fa-xmark text-danger"></i>
                 </li>
