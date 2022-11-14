@@ -9,7 +9,8 @@ var app = new Vue({
     },
     methods: {
         aggiungiTodoList(){
-            this.todoList.push(this.task)
+            this.todoList.push({task: this.task, done: false})
+
             console.log(this.todoList)
         },
     }
