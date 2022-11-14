@@ -35,7 +35,8 @@
             <ul class="list-group list-group-flush ">
                 <!-- Lista -->
                 <li v-for="(element, index) in todoList" class="list-group-item d-flex justify-content-between">
-                    <span>
+                    <!-- !If ternario da finire -->
+                    <span >
                        {{index}} | {{todoList[index].task}}
                     </span>
                     <i @click="taskCompletata(element, index)" class="fa-solid fa-xmark text-danger"></i>
@@ -52,9 +53,9 @@
                 <ul class="list-group list-group-flush ">
     
                     <!-- Lista -->
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>
-                            An item
+                    <li  v-for="(element, index) in todoDone" class="list-group-item d-flex justify-content-between">
+                        <span :class="(element.done == true) ? 'text-decoration-line-through' : ''">
+                            {{index}} | {{todoDone[index].task}}
                         </span>
                         <i class="fa-solid fa-xmark text-danger"></i>
                     </li>
