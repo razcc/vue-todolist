@@ -35,9 +35,9 @@
             <ul class="list-group list-group-flush ">
                 <!-- Lista -->
                 <li v-for="(element, index) in todoList" class="list-group-item d-flex justify-content-between">
-                    <!-- !If ternario da finire -->
-                    <span >
-                       {{index}} | {{todoList[index].task}}
+
+                    <span>
+                        {{index}} | {{todoList[index].task}}
                     </span>
                     <i @click="taskCompletata(element, index)" class="fa-solid fa-xmark text-danger"></i>
                 </li>
@@ -46,20 +46,33 @@
         </div>
 
         <!-- ^Area TodoDone -->
-        <div class="text-center ">
+        <div class="text-center">
 
             <h2 class="mt-5">Todo Completate</h2>
             <div class="pt-5 w-50 mx-auto">
                 <ul class="list-group list-group-flush ">
-    
+
                     <!-- Lista -->
-                    <li  v-for="(element, index) in todoDone" class="list-group-item d-flex justify-content-between">
+                    <li v-for="(element, index) in todoDone"
+                        class="list-group-item d-flex justify-content-between align-items-center">
+
                         <span :class="(element.done == true) ? 'text-decoration-line-through' : ''">
                             {{index}} | {{todoDone[index].task}}
                         </span>
-                        <i class="fa-solid fa-xmark text-danger"></i>
+
+
+                        <span @click="eliminaDefinitivamente(element, index)" class="bg-danger rounded-4 p-2 ms-3">
+                            Elimina definitivamente
+                        </span>
+                        <span @click="ripristinaTask(element, index)" class="bg-success rounded-4 p-2 ms-3">
+                            Ripristina Task
+                        </span>
+
+
+
+
                     </li>
-    
+
                 </ul>
             </div>
         </div>

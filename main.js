@@ -5,6 +5,7 @@ var app = new Vue({
         todoDone: [],
         task: '',
         
+        
 
 
     },
@@ -25,6 +26,14 @@ var app = new Vue({
             this.todoDone.push(element)
             console.log( this.todoDone)
 
+        },
+        eliminaDefinitivamente(element, index){
+            this.todoDone.splice (index, 1)
+        },
+        ripristinaTask(element, index){
+            this.todoDone.splice (index, 1);
+            this.todoList.push (element)
         }
+        
     }
 })
